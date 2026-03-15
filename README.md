@@ -41,11 +41,26 @@ Install the necessary Python libraries:
 ```bash
 pip install pandas scikit-learn matplotlib
 
+Gemini said
+Naeem, tumhare code mein main masla backticks (```) ka tha. Jab tum code block shuru karte ho, toh usse band karna bhi zaroori hota hai, warna GitHub ko lagta hai ke poora baqi ka document hi code hai. Isi wajah se image show nahi ho rahi thi.
+
+Maine niche bilkul sahi format likh diya hai, isse copy karke paste kar do:
+
+Markdown
+## 💻 How to Run the Project
+
+The Python script (`kmeans_script.py`) automatically **fetches** data from your `test_cap.csv` file.
+
+### **Prerequisites**
+Install the necessary Python libraries:
+```bash
+pip install pandas scikit-learn matplotlib
+
 Execution
 Open your terminal/CMD in the project directory and run:
+
 Bash
 python kmeans_script.py test_cap.csv
-
 
 ---
 
