@@ -29,6 +29,15 @@ To use this project with your own network data, follow these steps in **Wireshar
 * Go to **File > Export Packet Dissections > As CSV...**
 * Select **"All packets"** and save the file as `test_cap.csv` in your project folder.
 
+
+## 📊 Results & Visualization
+The AI successfully groups thousands of packets into clusters. Below is the visual representation of the analysis:
+
+![Network Analysis Graph](Analysis_graph.png)
+
+> **Note:** Isolated data points (Outliers) far from the centroids represent anomalies that a SOC Analyst must investigate.
+
+
 ---
 
 ## 💻 How to Run the Project
@@ -48,7 +57,7 @@ python kmeans_script.py test_cap.csv
 
 
 
- 📊 Results & Visualization
+## 📊 Results & Visualization
 The AI successfully groups thousands of packets into clusters. Below is the visual representation of the analysis:
 
 ![Network Analysis Graph](Analysis_graph.png)
