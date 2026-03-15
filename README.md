@@ -40,7 +40,7 @@ The AI successfully groups thousands of packets into clusters. Below is the visu
 
 ---
 
-## 💻 How to Run the Project
+## 💻 How to Run 
 
 The Python script (`kmeans_script.py`) automatically fetches data from your `test_cap.csv` file.
 
