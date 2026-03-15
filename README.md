@@ -45,7 +45,7 @@ Open your terminal/CMD in the project directory and run:
 
 ###**Bash
 python kmeans_script.py test_cap.csv
-)
+')
 
 
 ---
