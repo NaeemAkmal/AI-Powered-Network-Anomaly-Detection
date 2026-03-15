@@ -38,14 +38,14 @@ The Python script (`kmeans_script.py`) automatically **fetches** data from your 
 ### **Prerequisites**
 Install the necessary Python libraries:
 ```bash
-pip install pandas scikit-learn matplotlib
+(pip install pandas scikit-learn matplotlib
 
 ###**Execution
 Open your terminal/CMD in the project directory and run:
 
 ###**Bash
 python kmeans_script.py test_cap.csv
-
+)
 
 
 ---
