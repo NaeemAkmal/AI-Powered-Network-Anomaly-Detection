@@ -46,6 +46,8 @@ Open your terminal/CMD in the project directory and run:
 ###**Bash
 python kmeans_script.py test_cap.csv
 
+
+
 ---
 
 ## 📊 Results & Visualization
@@ -53,6 +55,6 @@ The AI successfully groups thousands of packets into clusters. Below is the visu
 
 ![Network Analysis Graph](Analysis_graph.png)
 
-> **Note:** Isolated data points (Outliers) far from the centroids represent anomalies that a SOC Analyst must investigate.
+. **Note:** Isolated data points (Outliers) far from the centroids represent anomalies that a SOC Analyst must investigate.
 
 ---
