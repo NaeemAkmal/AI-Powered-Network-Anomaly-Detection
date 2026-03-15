@@ -1,7 +1,7 @@
 # 🛡️ AI-Powered Network Anomaly Detection
 
 ## 📖 Project Overview
-This project demonstrates the integration of **Unsupervised Machine Learning** in Blue Team operations. By analyzing network traffic patterns using the **K-Means algorithm**, we can automatically establish a baseline and detect security anomalies (outliers) that could indicate malicious activity.
+This project demonstrates the integration of **Unsupervised Machine Learning** in Blue Team operations. Using the **K-Means Clustering** algorithm, we analyze network traffic patterns to automatically establish a baseline and detect security anomalies (outliers) that could indicate malicious activity.
 
 ---
 
@@ -15,31 +15,36 @@ This project demonstrates the integration of **Unsupervised Machine Learning** i
 
 ## 🛠️ Step-by-Step Guide: How to Capture Data
 
-To replicate this project, follow these steps in **Wireshark**:
+To replicate this project, follow these detailed steps in **Wireshark**:
 
 ### 1. Launch Capture
-* Open Wireshark and select your active network interface.
-* Click the **Blue Shark Fin** icon to start.
+* Open Wireshark and select your active network interface (Wi-Fi or Ethernet).
+* Click the **Blue Shark Fin** icon to start the live capture.
 
 ### 2. Generate Traffic (Baseline)
-* Perform normal activities (browsing, streaming) for 5 minutes. This creates the "Normal" data behavior.
+* Perform normal activities (browsing, streaming, or background updates) for 5 minutes. This creates the "Normal" data behavior for the AI to learn.
 
 ### 3. Stop and Export
+* Click the **Red Stop Button** once finished.
 * Go to **File > Export Packet Dissections > As CSV...**
-* Save the file as `test_cap.csv` in your project folder.
+* Ensure **"All packets"** is selected and save the file as `test_cap.csv` in your project folder.
 
 ---
 
-## 📊 Results & Visualization
-The AI successfully groups thousands of packets into clusters. Below is the visual representation of the analysis:
+## 💻 Execution & Technical Details
 
-![Network Analysis Graph](Analysis_graph.png)
+The analysis is performed by the main Python script which **fetches** data from the exported Wireshark CSV.
 
-> **Note:** Isolated data points (Outliers) far from the centroids represent anomalies that a SOC Analyst must investigate.
+* **Main Script:** `kmeans_script.py`
+* **Data Source:** `test_cap.csv`
 
----
+### **How to Run**
+1. **Install Dependencies:**
+   ```bash
+   pip install pandas scikit-learn matplotlib
 
-## 📚 Blue Team Vocabulary
-* **Unsupervised Learning:** AI that finds patterns without pre-defined labels.
-* **Baseline:** The "normal" state of network activity.
-* **Outlier:** A data point that differs significantly from others.
+   Run the Script:
+Open your terminal in the project directory and run:
+
+Bash
+python kmeans_script.py test_cap.csv
