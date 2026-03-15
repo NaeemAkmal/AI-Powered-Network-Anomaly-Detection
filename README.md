@@ -35,17 +35,16 @@ To use this project with your own network data, follow these steps in **Wireshar
 
 The Python script (`kmeans_script.py`) automatically **fetches** data from your `test_cap.csv` file.
 
-### **Prerequisites**
+## Prerequisites
 Install the necessary Python libraries:
+
 ```bash
-(pip install pandas scikit-learn matplotlib
+pip install pandas scikit-learn matplotlib
 
-###**Execution
+Execution
 Open your terminal/CMD in the project directory and run:
-
 ###**Bash
 python kmeans_script.py test_cap.csv
-')
 
 
 ---
