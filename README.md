@@ -1,50 +1,58 @@
-# 🛡️ AI-Powered Network Anomaly Detection
+# 🛡️ AI-Powered Network Anomaly Detection using K-Means
 
 ## 📖 Project Overview
-This project demonstrates the integration of **Unsupervised Machine Learning** in Blue Team operations. Using the **K-Means Clustering** algorithm, we analyze network traffic patterns to automatically establish a baseline and detect security anomalies (outliers) that could indicate malicious activity.
+This project demonstrates how **Unsupervised Machine Learning** can be applied to **Blue Team** operations. By using the **K-Means Clustering** algorithm, we analyze network traffic to automatically establish a baseline and detect security anomalies (outliers) that could indicate malicious activity like unauthorized data transfers or scanning.
 
 ---
 
 ## 🚀 Key Features
-* **Data Source:** Real-world network traffic captured via **Wireshark**.
-* **Machine Learning:** Implementation of K-Means clustering using the **Scikit-learn** library.
-* **Data Visualization:** High-resolution scatter plots showing 5 distinct traffic clusters and their centroids.
-* **Security Insights:** Automated identification of unusual packets, including specific **TLSv1.3** application data spikes.
+* **Real-World Data:** Analyzes traffic captured directly from **Wireshark**.
+* **AI Implementation:** Uses **Scikit-learn** to perform automated clustering.
+* **Interactive Visualization:** Generates scatter plots showing traffic groups and centroids.
+* **Threat Hunting:** Helps identify suspicious packets (like TLS spikes) that deviate from the normal baseline.
 
 ---
 
 ## 🛠️ Step-by-Step Guide: How to Capture Data
 
-To replicate this project, follow these detailed steps in **Wireshark**:
+To use this project with your own network data, follow these steps in **Wireshark**:
 
-### 1. Launch Capture
-* Open Wireshark and select your active network interface (Wi-Fi or Ethernet).
-* Click the **Blue Shark Fin** icon to start the live capture.
+### 1. Start Capture
+* Open Wireshark and select your active interface (Wi-Fi or Ethernet).
+* Click the **Blue Shark Fin** icon to start live capturing.
 
-### 2. Generate Traffic (Baseline)
-* Perform normal activities (browsing, streaming, or background updates) for 5 minutes. This creates the "Normal" data behavior for the AI to learn.
+### 2. Create a Baseline
+* Perform normal activities (browsing, streaming, work) for 5-10 minutes so the AI can learn what "Normal" looks like.
 
-### 3. Stop and Export
-* Click the **Red Stop Button** once finished.
+### 3. Export to CSV
+* Click the **Red Stop Button**.
 * Go to **File > Export Packet Dissections > As CSV...**
-* Ensure **"All packets"** is selected and save the file as `test_cap.csv` in your project folder.
+* Select **"All packets"** and save the file as `test_cap.csv` in your project folder.
 
 ---
 
-## 💻 Execution & Technical Details
+## 💻 How to Run the Project
 
-The analysis is performed by the main Python script which **fetches** data from the exported Wireshark CSV.
+The Python script (`kmeans_script.py`) automatically **fetches** data from your `test_cap.csv` file.
 
-* **Main Script:** `kmeans_script.py`
-* **Data Source:** `test_cap.csv`
+### **Prerequisites**
+Install the necessary Python libraries:
+```bash
+pip install pandas scikit-learn matplotlib
 
-### **How to Run**
-1. **Install Dependencies:**
-   ```bash
-   pip install pandas scikit-learn matplotlib
+###**Execution
+Open your terminal/CMD in the project directory and run:
 
-   Run the Script:
-Open your terminal in the project directory and run:
-
-Bash
+###**Bash
 python kmeans_script.py test_cap.csv
+
+---
+
+## 📊 Results & Visualization
+The AI successfully groups thousands of packets into clusters. Below is the visual representation of the analysis:
+
+![Network Analysis Graph](Analysis_graph.png)
+
+> **Note:** Isolated data points (Outliers) far from the centroids represent anomalies that a SOC Analyst must investigate.
+
+---
