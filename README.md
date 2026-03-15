@@ -48,7 +48,7 @@ python kmeans_script.py test_cap.csv
 
 
 
-## 📊 Results & Visualization
+ 📊 Results & Visualization
 The AI successfully groups thousands of packets into clusters. Below is the visual representation of the analysis:
 
 ![Network Analysis Graph](Analysis_graph.png)
