@@ -43,7 +43,7 @@ pip install pandas scikit-learn matplotlib
 
 Execution
 Open your terminal/CMD in the project directory and run:
-###**Bash
+Bash
 python kmeans_script.py test_cap.csv
 
 
